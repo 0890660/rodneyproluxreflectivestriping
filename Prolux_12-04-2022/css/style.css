@@ -1,0 +1,160 @@
+body {
+  position: relative;
+  overflow-x: hidden;
+  overflow: overlay;
+  background-color: black;
+}
+
+/* ------------ SCROLLBAR ------------ */
+/* width */
+::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  box-shadow: 0px 0px 10px 5px red;
+  background-color: rgb(0, 0, 0);
+} */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 1);
+  border-radius: 999rem;
+  border: 1px solid rgba(0, 0, 0, 0.75);
+}
+
+.scrollcontainer {
+  scroll-snap-type: y mandatory;
+}
+
+/* ------------ NAVIGATION ------------ */
+
+.navigation {
+  color: white;
+  background: linear-gradient(to top, black, rgb(45, 45, 45));
+  box-shadow: 0px 0px 10px 5px black;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 0 10%;
+  z-index: 5;
+}
+
+.nav-items {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-items h3 {
+  transition: all 0.1s;
+  cursor: default;
+}
+.nav-items h3:hover {
+  color: gray;
+}
+
+.logo {
+  height: 65%;
+  margin: 0.2rem;
+}
+
+/* ------------ Section 1 ------------ */
+
+.bg-1 {
+  position: absolute;
+  bottom: -15%;
+  left: 0;
+  z-index: -1;
+}
+
+.learn-more {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  margin-top: 1.6rem;
+  opacity: 0;
+  animation-delay: 1s;
+  cursor: pointer;
+  transition: all 0.1ms;
+}
+
+.learn-more-left {
+  animation: 1.5s cubic-bezier(0.79, 0.06, 0.25, 0.93) 0s 1 slideInFromLeft
+    forwards;
+}
+
+.learn-more-right {
+  margin-left: auto;
+  animation: 1.5s cubic-bezier(0.79, 0.06, 0.25, 0.93) 0s 1 slideInFromRight
+    forwards;
+}
+
+.text-container p {
+  margin-bottom: 0.6rem;
+}
+
+/* ------------ Section 2 ------------ */
+
+.bg-2 {
+  position: absolute;
+  bottom: -10%;
+  left: 0;
+  z-index: -1;
+}
+
+/* ------------ Section 3 ------------ */
+
+.bg-3 {
+  position: absolute;
+  bottom: -20%;
+  left: 0;
+  z-index: -1;
+}
+
+/* ------------ ANIMATIONS ------------ */
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-15%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(+15%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes imageload {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
